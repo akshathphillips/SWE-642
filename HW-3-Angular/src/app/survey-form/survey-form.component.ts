@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {catchError} from "rxjs";
 
 @Component({
   selector: 'app-survey-form',
@@ -36,7 +37,6 @@ export class SurveyFormComponent {
   }
 
   submitForm(formData: any) {
-    console.log(formData);
     // Define the API URL
     const apiUrl = 'http://localhost:8080/api/surveys';
 
@@ -46,15 +46,18 @@ export class SurveyFormComponent {
     });
 
     // Send the POST request to the API
-    this.httpClient.post(apiUrl, formData, {headers}).subscribe(
-      (response) => {
+    this.httpClient
+      .post(apiUrl, formData, {headers})
+      .pipe(
+        catchError((error: any) => {
+          console.error('Error submitting survey', error);
+          throw new Error(error); // Re-throw the error to propagate it further
+        })
+      )
+      .subscribe((response) => {
         console.log('Survey submitted successfully', response);
         // Reset the form after successful submission if needed
         // this.surveyForm.reset();
-      },
-      (error) => {
-        console.error('Error submitting survey', error);
-      }
-    );
+      });
   }
 }
