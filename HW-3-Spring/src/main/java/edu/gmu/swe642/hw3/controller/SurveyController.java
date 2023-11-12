@@ -17,7 +17,11 @@ public class SurveyController {
 
     @PostMapping
     public Survey saveSurvey(@RequestBody Survey survey) {
-        return surveyRepository.save(survey);
+        try {
+            return surveyRepository.save(survey);
+        } catch (Throwable t) {
+            throw t;
+        }
     }
 
     @GetMapping
