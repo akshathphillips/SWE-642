@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "HW-3-Angular": {
+    "angular-frontend-hw3": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/hw-3-angular",
+            "outputPath": "dist/angular-frontend-hw3",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -60,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "HW-3-Angular:build:production"
+              "browserTarget": "angular-frontend-hw3:build:production"
             },
             "development": {
-              "browserTarget": "HW-3-Angular:build:development"
+              "browserTarget": "angular-frontend-hw3:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "HW-3-Angular:build"
+            "browserTarget": "angular-frontend-hw3:build"
           }
         },
         "test": {
@@ -87,6 +88,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              
               "src/styles.css"
             ],
             "scripts": []
@@ -94,8 +97,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "9aad8408-c07d-4fb2-b70b-7c0e501798f4"
   }
 }
