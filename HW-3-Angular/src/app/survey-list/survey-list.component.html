@@ -1,0 +1,54 @@
+<h2 class="text text-center">Survey list</h2>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Gid : </th>
+            <th>First Name:</th>
+            <th>Last Name:</th>
+            <th>Street Address:</th>
+            <th>City:</th>
+            <th>State:</th> 
+            <th>Zip:</th>  
+            <th>Telephone Number:</th>
+            <th>Email:</th>
+            <th>Date Of Survey:</th>
+            <th>Liked most about Campus:</th>
+            <th>Interested in College :</th>
+            <th>Likelihood to Recommend :</th>
+            <th>Additional Comments:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let survey of surveyforms">
+            <td>{{survey.Gid}}</td>
+            <td>{{survey.firstName}}</td>
+            <td>{{survey.lastName}}</td>
+            <td>{{survey.streetAddress}}</td>
+            <td>{{survey.city}}</td>
+            <td>{{survey.state}}</td>
+            <td>{{survey.zip}}</td>
+            <td>{{survey.telephoneNumber}}</td>
+            <td>{{survey.email}}</td>
+            <td>{{survey.dateOfSurvey}}</td>
+            <td>{{survey.likedMostOptions}}</td>
+            <td>{{survey.interestedIn}}</td>
+            <td>{{survey.likelihoodToRecommend}}</td>
+            <td>{{survey.additionalComments}}</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <footer id="foot" class="w3-container w3-padding-64  w3-opacity">
+      <div class="w3-xlarge w3-padding-32 ">
+        <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a routerLink="/fill-survey" routerlinkActive="active" >Student Survey</a>
+                </li>
+                <br>
+                <li class="list-inline-item">
+                    <a routerLink= "/homepage" routerlinkActive="active" >Homepage</a>
+                </li>
+            </ul>
+     </div>
+    </footer>
+    </div>
