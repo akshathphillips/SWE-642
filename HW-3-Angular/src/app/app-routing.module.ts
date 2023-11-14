@@ -1,19 +1,21 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {AppComponent} from "./app.component";
-import {SurveyFormComponent} from "./survey-form/survey-form.component";
-import {SurveyListComponent} from "./survey-list/survey-list.component";
-import {WelcomeComponent} from "./welcome/welcome.component";
-
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { SurveyListComponent } from './survey-list/survey-list.component';
+import { FillSurveyComponent } from './fill-survey/fill-survey.component';
+import { HomepageComponent } from './homepage/homepage.component';
 const routes: Routes = [
-  {path: '', component: WelcomeComponent},
-  {path: 'survey', component: SurveyFormComponent},
-  {path: 'list-surveys', component: SurveyListComponent},
+  {path: 'surveyform', component: SurveyListComponent},
+  {path: 'fill-survey', component: FillSurveyComponent},
+  {path: 'homepage', component: HomepageComponent},
+  {
+    path: '',
+    redirectTo: 'homepage',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

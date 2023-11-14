@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'HW-3-Angular'`, () => {
+  it(`should have as title 'angular-frontend-hw3'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('HW-3-Angular');
+    expect(app.title).toEqual('angular-frontend-hw3');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('HW-3-Angular app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-frontend-hw3 app is running!');
   });
 });
