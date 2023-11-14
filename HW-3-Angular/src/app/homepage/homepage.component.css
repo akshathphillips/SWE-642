@@ -1,0 +1,70 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+ /* Styling for navbar and menu items */
+.w3-bar-item.w3-button.w3-padding-large:hover {
+       background-color: #FFCC33 !important;
+   }
+.w3-bar-item.w3-button.w3-hide-small.w3-padding-large:hover, .w3-center.w3-padding-large.w3-xlarge.w3-wide.w3-animate-opacity{
+       background-color: #FFCC33 !important;
+   }  .w3-bar, .w3-center.w3-padding-large.w3-xlarge.w3-wide.w3-animate-opacity:hover, .w3-container.w3-cente{
+    background-color: #006633 !important;
+  }
+   .green-color{
+     color: #006633;
+   }
+  .w3-hide-small {
+        font-weight: bold;
+    }
+  .bgimg-1{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bgimg-1 {
+    background-image: url('https://media.bizj.us/view/img/12018832/wbj-10*1200xx6720-3780-0-350.jpg');
+    min-height: 100%;
+  }
+ 
+    table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+
+
+    .Degree .dheader ul {
+
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(30px, 0.5fr));
+      grid-gap: 15px;
+      list-style: none;
+      padding:0;
+      margin: 0;
+    }
+    #button {
+        width: 6em;
+        border: 2px solid green;
+        background: #ffe;
+        border-radius: 5px;
+    }
+    /* Styling for footer links */
+    footer a {
+    text-decoration: none; /* Removes the underline from links */
+    color: #006633; /* Change the link color */
+    margin-right: 20px; /* Add some spacing between links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline links on hover */
+    color: #FFCC33;
+}
