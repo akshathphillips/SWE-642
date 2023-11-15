@@ -1,9 +1,10 @@
 <h2 class="text-center">Survey List</h2>
-<div class="table-responsive">
+<br>
+<div class="table-responsive ">
   <table class="table table-striped table-sm table-bordered">
-    <thead>
+    <thead class="design">
     <tr>
-      <th>Gid</th>
+      <!--<th>Gid</th>-->
       <th>First Name</th>
       <th>Last Name</th>
       <th>Street Address</th>
@@ -21,7 +22,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let survey of surveyForms">
-      <td>{{ survey.Gid }}</td>
+      <!--<td>{{survey.Gid}}</td>-->
       <td>{{ survey.firstName }}</td>
       <td>{{ survey.lastName }}</td>
       <td>{{ survey.streetAddress }}</td>
@@ -39,6 +40,8 @@
     </tbody>
   </table>
 </div>
+<br>
+<br>
 <div>
   <footer class="w3-container w3-padding-64 w3-opacity" id="foot">
     <div class="w3-xlarge w3-padding-32">
@@ -46,6 +49,7 @@
         <li class="list-inline-item">
           <a routerLink="/survey-form" routerlinkActive="active">Student Survey</a>
         </li>
+        <br>
         <li class="list-inline-item">
           <a routerLink="/homepage" routerlinkActive="active">Homepage</a>
         </li>
