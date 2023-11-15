@@ -1,1 +1,113 @@
-
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    border: 5px solid #006633;
+    box-shadow: 5px 10px 20px #FFCC33 inset;
+    padding-left: 350px;
+    padding-right: 350px;
+  }
+  
+  /* Form Styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: normal;
+  }
+  .row.g-3 {
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin: 50px auto; /* Center the form horizontally and add top margin */
+    position: relative; /* Enable positioning */
+    z-index: 1; /* Set a higher z-index to bring the form to the top */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.1); /* Add a shadow border */
+    padding: 20px; /* Add padding for better aesthetics */
+    background-color: #fff; /* Set a background color */
+  }
+ 
+  /* Input Styles */
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Checkbox and Radio Styles */
+  .form-check-input {
+    margin-right: 5px;
+  }
+  
+  /* Button Styles */
+  
+  .btn-primary,
+  .btn-secondary {
+    display: inline-block;
+    padding: 8px 16px; /* Adjust padding for a smaller button */
+    font-size: 14px; /* Adjust font size for a smaller button */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px; /* Add margin between buttons */
+  }
+  
+  .btn-primary:last-child,
+  .btn-secondary:last-child {
+    margin-right: 0; /* Remove margin for the last button */
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-primary:disabled,
+  .btn-secondary:disabled {
+    background-color: #d1d1d1;
+    cursor: not-allowed;
+  }
+  
+ 
+  
+  /* Error Message Styles */
+  .has-error {
+    border-color: #ff0000;
+  }
+  
+  .text-danger {
+    color: #ff0000;
+    margin-top: 5px;
+  }
+  
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .header {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .required::before {
+    content: "* ";
+    color: red;
+}
