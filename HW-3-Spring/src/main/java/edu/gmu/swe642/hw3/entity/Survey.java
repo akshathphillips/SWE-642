@@ -35,7 +35,7 @@ public class Survey {
     @Column(name = "telephone_number", nullable = false)
     private String telephoneNumber;
 
-    @Column(name = "email", nullable = false, unique = true)
+    @Column(name = "email", nullable = false)
     private String email;
 
     @Column(name = "date_of_survey", nullable = false)
