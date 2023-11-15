@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {SurveyFormService} from '../survey-form.service';
 import {SurveyForm} from "../survey-form";
 import {catchError} from "rxjs";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-survey-form',
@@ -9,6 +10,9 @@ import {catchError} from "rxjs";
   styleUrls: ['./survey-form.component.css']
 })
 export class SurveyFormComponent {
+
+  @ViewChild('surveyForm') public surveyForm: NgForm | undefined;
+
   constructor(private formService: SurveyFormService) {
   }
 
@@ -55,7 +59,9 @@ export class SurveyFormComponent {
       )
       .subscribe((response) => {
         console.log('Survey submitted successfully', response);
-        // this.surveyForm.reset();
+        if (this.surveyForm) {
+          this.surveyForm.reset();
+        }
       });
   }
 }
