@@ -25,7 +25,7 @@ export class SurveyFormComponent {
 
   validateLikedMostOptions() {
     if (this.surveyData.likedMostOptions.length === 0) {
-      return {required: 'Please select at least one option for Liked Most'};
+      return {required: ''};
     }
     return null;
   }
