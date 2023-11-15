@@ -1,0 +1,44 @@
+/* Center the table */
+.table-responsive {
+    margin: 0 auto;
+  }
+  
+  /* Set the table width */
+  table {
+    width: 100%;
+  }
+  
+  /* Set the table header row background color */
+  thead tr {
+    background-color:green;
+  }
+  
+  /* Set the table border color */
+  table td, th {
+    border: 1px solid #ccc;
+  }
+  
+  /* Set the table cell padding */
+  table td, th {
+    padding: 8px;
+  }
+  
+  /* Set the font size for the table */
+  table {
+    font-size: 14px;
+  }
+  
+ 
+ .design  {
+    
+    text-align: center;
+    text-decoration: solid;
+    background-color:green;
+
+  }
+  .design th {
+    background-color: gray;
+    color: white; /* Optional: Set text color to white for better contrast */
+    
+
+  }
