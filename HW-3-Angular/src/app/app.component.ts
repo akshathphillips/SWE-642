@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +6,5 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-frontend-hw3';
-  
+  title = 'HW-3-Angular';
 }

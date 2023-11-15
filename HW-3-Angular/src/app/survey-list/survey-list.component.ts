@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Surveyform } from '../surveyform';
-import { SurveyformService } from '../surveyform.service';
+import {Component, OnInit} from '@angular/core';
+import {SurveyForm} from '../survey-form';
+import {SurveyFormService} from '../survey-form.service';
 
 @Component({
   selector: 'app-survey-list',
@@ -8,18 +8,19 @@ import { SurveyformService } from '../surveyform.service';
   styleUrls: ['./survey-list.component.css']
 })
 export class SurveyListComponent implements OnInit {
-  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-  //Add 'implements OnInit' to the class.
-  surveyforms: Surveyform[] = [];
-  constructor(private surveyformservice : SurveyformService) { } 
-  ngOnInit(): void {
-    this.getsurveyforms();
+  surveyForms: SurveyForm[] = [];
+
+  constructor(private surveyFormService: SurveyFormService) {
   }
-  private getsurveyforms(){
-      this.surveyformservice.getSurveyList().subscribe(data => {
-        this.surveyforms = data;
+  ngOnInit(): void {
+    this.getSurveyForms();
+  }
+
+  getSurveyForms() {
+    this.surveyFormService.getSurveyList().subscribe(data => {
+      this.surveyForms = data;
       });
     }
-  }  
-  
+  }
+
 

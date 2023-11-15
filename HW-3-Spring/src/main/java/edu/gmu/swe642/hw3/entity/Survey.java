@@ -1,5 +1,6 @@
 package edu.gmu.swe642.hw3.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -7,6 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Survey")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Survey {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,34 +41,19 @@ public class Survey {
     @Column(name = "date_of_survey", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateOfSurvey;
-
-    @ElementCollection(targetClass = LikedMost.class)
-    @Enumerated(EnumType.STRING)
+    @ElementCollection
     @CollectionTable(name = "liked_most_options", joinColumns = @JoinColumn(name = "survey_id"))
-    private Set<LikedMost> likedMostOptions;
+    @Column(name = "liked_most_options")
+    private Set<String> likedMostOptions;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "interested_in")
-    private InterestedIn interestedIn;
+    private String interestedIn;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "likelihood_to_recommend")
-    private LikelihoodToRecommend likelihoodToRecommend;
+    private String likelihoodToRecommend;
 
     @Column(name = "additional_comments", columnDefinition = "TEXT")
     private String additionalComments;
-
-    public enum LikedMost {
-        STUDENTS, LOCATION, CAMPUS, ATMOSPHERE, DORM_ROOMS, SPORTS
-    }
-
-    public enum InterestedIn {
-        FRIENDS, TELEVISION, INTERNET, OTHER
-    }
-
-    public enum LikelihoodToRecommend {
-        VERY_LIKELY, LIKELY, UNLIKELY
-    }
 
     public Long getId() {
         return id;
@@ -148,27 +135,27 @@ public class Survey {
         this.dateOfSurvey = dateOfSurvey;
     }
 
-    public Set<LikedMost> getLikedMostOptions() {
+    public Set<String> getLikedMostOptions() {
         return likedMostOptions;
     }
 
-    public void setLikedMostOptions(Set<LikedMost> likedMostOptions) {
+    public void setLikedMostOptions(Set<String> likedMostOptions) {
         this.likedMostOptions = likedMostOptions;
     }
 
-    public InterestedIn getInterestedIn() {
+    public String getInterestedIn() {
         return interestedIn;
     }
 
-    public void setInterestedIn(InterestedIn interestedIn) {
+    public void setInterestedIn(String interestedIn) {
         this.interestedIn = interestedIn;
     }
 
-    public LikelihoodToRecommend getLikelihoodToRecommend() {
+    public String getLikelihoodToRecommend() {
         return likelihoodToRecommend;
     }
 
-    public void setLikelihoodToRecommend(LikelihoodToRecommend likelihoodToRecommend) {
+    public void setLikelihoodToRecommend(String likelihoodToRecommend) {
         this.likelihoodToRecommend = likelihoodToRecommend;
     }
 

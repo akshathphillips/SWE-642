@@ -1,28 +1,33 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'; // <-- Import HttpClientModule
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { SurveyListComponent } from './survey-list/survey-list.component';
-import { FillSurveyComponent } from './fill-survey/fill-survey.component';
-import { NgForm,FormsModule } from '@angular/forms';
-import { HomepageComponent } from './homepage/homepage.component'; 
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HomepageComponent} from "./homepage/homepage.component";
+import {SurveyFormService} from "./survey-form.service";
+import {SurveyListComponent} from "./survey-list/survey-list.component";
+import {HttpClientModule} from "@angular/common/http";
+import {SurveyFormComponent} from "./survey-form/survey-form.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgForOf} from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent,
-    SurveyListComponent,
     HomepageComponent,
-    FillSurveyComponent
+    SurveyListComponent,
+    SurveyFormComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    NgForm
-  ],
-  providers: [],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        NgForOf,
+        ReactiveFormsModule
+    ],
+  providers: [SurveyFormService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
