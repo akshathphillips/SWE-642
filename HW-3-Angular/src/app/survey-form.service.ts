@@ -19,6 +19,17 @@ export class SurveyFormService {
 
   createSurvey(surveyForm: SurveyForm): Observable<Object> {
     return this.httpClient.post(`${this.baseURL}`, surveyForm);
+  }
 
+  updateSurvey(id: number, surveyForm: SurveyForm): Observable<Object> {
+    return this.httpClient.put(`${this.baseURL}/${id}`, surveyForm);
+  }
+
+  deleteSurvey(id: number): Observable<Object> {
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
+
+  getSurvey(id: number): Observable<Object> {
+    return this.httpClient.get<SurveyForm[]>(`${this.baseURL}/${id}`);
   }
 }
