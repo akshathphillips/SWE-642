@@ -2,64 +2,64 @@
 
 <!-- Menu Bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/survey-form" routerlinkActive="active">Student Survey</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/homepage" routerlinkActive="active">Homepage</a>
-            </li>
-        </ul>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/survey-form" routerlinkActive="active">Student Survey</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/homepage" routerlinkActive="active">Homepage</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <br>
 
 <div class="table-responsive">
-    <table class="table table-striped table-bordered align-middle">
-        <thead class="thead-dark">
-        <tr>
-            <th></th>
-            <th class="text-wrap align-middle">First Name</th>
-            <th class="text-wrap align-middle">Last Name</th>
-            <th class="text-wrap align-middle">Street Address</th>
-            <th class="text-wrap align-middle">City</th>
-            <th class="text-wrap align-middle">State</th>
-            <th class="text-wrap align-middle">Zip</th>
-            <th class="text-wrap align-middle">Telephone Number</th>
-            <th class="text-wrap align-middle">Email</th>
-            <th class="text-wrap align-middle">Date Of Survey</th>
-            <th class="text-wrap align-middle">Liked Most about Campus</th>
-            <th class="text-wrap align-middle">Interested in College</th>
-            <th class="text-wrap align-middle">Likelihood to Recommend</th>
-            <th class="text-wrap align-middle">Additional Comments</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let survey of surveyForms">
-            <td>
-                <div class="d-flex">
-                    <i class="bi bi-pencil fs-5 me-2 text-primary" style="cursor: pointer"></i>
-                    <i class="bi bi-trash fs-5 text-danger" style="cursor: pointer"></i>
-                </div>
-            </td>
-            <td class="text-wrap">{{ survey.firstName }}</td>
-            <td class="text-wrap">{{ survey.lastName }}</td>
-            <td class="text-wrap">{{ survey.streetAddress }}</td>
-            <td class="text-wrap">{{ survey.city }}</td>
-            <td class="text-wrap">{{ survey.state }}</td>
-            <td class="text-wrap">{{ survey.zip }}</td>
-            <td class="text-wrap">{{ survey.telephoneNumber }}</td>
-            <td class="text-wrap">{{ survey.email }}</td>
-            <td class="text-wrap">{{ survey.dateOfSurvey }}</td>
-            <td class="text-wrap">{{ survey.likedMostOptions }}</td>
-            <td class="text-wrap">{{ survey.interestedIn }}</td>
-            <td class="text-wrap">{{ survey.likelihoodToRecommend }}</td>
-            <td class="text-wrap">{{ survey.additionalComments }}</td>
-        </tr>
-        </tbody>
-    </table>
+  <table class="table table-striped table-bordered align-middle">
+    <thead class="thead-dark">
+    <tr>
+      <th></th>
+      <th class="text-wrap align-middle">First Name</th>
+      <th class="text-wrap align-middle">Last Name</th>
+      <th class="text-wrap align-middle">Street Address</th>
+      <th class="text-wrap align-middle">City</th>
+      <th class="text-wrap align-middle">State</th>
+      <th class="text-wrap align-middle">Zip</th>
+      <th class="text-wrap align-middle">Telephone Number</th>
+      <th class="text-wrap align-middle">Email</th>
+      <th class="text-wrap align-middle">Date Of Survey</th>
+      <th class="text-wrap align-middle">Liked Most about Campus</th>
+      <th class="text-wrap align-middle">Interested in College</th>
+      <th class="text-wrap align-middle">Likelihood to Recommend</th>
+      <th class="text-wrap align-middle">Additional Comments</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let survey of surveyForms">
+      <td>
+        <div class="d-flex">
+          <i class="bi bi-pencil fs-5 me-2 text-primary" style="cursor: pointer"></i>
+          <i class="bi bi-trash fs-5 text-danger" style="cursor: pointer"></i>
+        </div>
+      </td>
+      <td class="text-wrap">{{ survey.firstName }}</td>
+      <td class="text-wrap">{{ survey.lastName }}</td>
+      <td class="text-wrap">{{ survey.streetAddress }}</td>
+      <td class="text-wrap">{{ survey.city }}</td>
+      <td class="text-wrap">{{ survey.state }}</td>
+      <td class="text-wrap">{{ survey.zip }}</td>
+      <td class="text-wrap">{{ survey.telephoneNumber }}</td>
+      <td class="text-wrap">{{ survey.email }}</td>
+      <td class="text-wrap">{{ survey.dateOfSurvey }}</td>
+      <td class="text-wrap">{{ survey.likedMostOptions }}</td>
+      <td class="text-wrap">{{ survey.interestedIn }}</td>
+      <td class="text-wrap">{{ survey.likelihoodToRecommend }}</td>
+      <td class="text-wrap">{{ survey.additionalComments }}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 
 <br>
