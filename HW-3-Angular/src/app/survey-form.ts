@@ -1,4 +1,5 @@
 export class SurveyForm {
+  id: string;
   Gid: string;
   firstName: string;
   lastName: string;
@@ -15,6 +16,7 @@ export class SurveyForm {
   additionalComments: string;
 
   constructor() {
+    this.id = "";
     this.Gid = "";
     this.firstName = "";
     this.lastName = "";

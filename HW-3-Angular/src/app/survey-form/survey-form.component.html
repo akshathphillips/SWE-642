@@ -1,181 +1,187 @@
-<div class="header" style="border: #006633; border-width: 5px; border-style: solid; box-shadow: 5px 10px 20px #FFCC33 inset;  padding-left: 150px; padding-right: 150px;">
-  <img style=" padding-bottom: 20px; padding-top: 20px; width: 100%; height: 100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoWT8z7MotyVsXgXLYC_Xg-JxrQ4QePgx5Dg&usqp=CAU">
-</div>
-<br>
+<nav *ngIf="!isUpdate" class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/survey-form" routerlinkActive="active">Student Survey</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/survey-list" routerlinkActive="active">List of Surveys</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/homepage" routerlinkActive="active">Homepage</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-  <h1 class="text-center">CS Department Campus Survey</h1>
-<form #surveyForm="ngForm" (ngSubmit)="submitForm(surveyData)" class="row g-3">
-  <div [ngClass]="{'has-error': validateRequired(surveyData.firstName)}" class="form-group col-12">
-    <label for="firstName" class="required">First Name</label>
-    <input #firstName="ngModel" [(ngModel)]="surveyData.firstName" [ngModelOptions]="{updateOn: 'blur'}"
-           class="form-control" id="firstName"
-           name="firstName"
-           ngModel required>
-    <div *ngIf="firstName.errors?.['required']" class="text-danger">
-      
+<h1 class="display-6 text-center">Survey Form</h1>
+<form #surveyForm="ngForm" (ngSubmit)="submitForm(surveyData)" class="row g-3 mt-2">
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateRequired(surveyData.firstName)}" class="form-group">
+      <label class="required" for="firstName">First Name</label>
+      <input #firstName="ngModel" [(ngModel)]="surveyData.firstName" [ngModelOptions]="{updateOn: 'blur'}"
+             class="form-control" id="firstName" name="firstName" ngModel required>
+      <div *ngIf="firstName.errors?.['required']" class="text-danger small">
+        Required
+      </div>
     </div>
   </div>
 
-  <div [ngClass]="{'has-error': validateRequired(surveyData.lastName)}" class="form-group col-12">
-    <label for="lastName"  class="required">Last Name</label>
-    <input #lastName="ngModel" [(ngModel)]="surveyData.lastName" [ngModelOptions]="{updateOn: 'blur'}"
-           class="form-control" id="lastName"
-           name="lastName"
-           ngModel required>
-    <div *ngIf="lastName.errors?.['required']" class="text-danger">
-     
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateRequired(surveyData.lastName)}" class="form-group">
+      <label class="required" for="lastName">Last Name</label>
+      <input #lastName="ngModel" [(ngModel)]="surveyData.lastName" [ngModelOptions]="{updateOn: 'blur'}"
+             class="form-control" id="lastName" name="lastName" ngModel required>
+      <div *ngIf="lastName.errors?.['required']" class="text-danger small">
+        Required
+      </div>
     </div>
   </div>
 
-  <div [ngClass]="{'has-error': validateRequired(surveyData.streetAddress)}" class="form-group col-12">
-    <label for="streetAddress"  class="required">Street Address</label>
-    <input #streetAddress="ngModel" [(ngModel)]="surveyData.streetAddress" [ngModelOptions]="{updateOn: 'blur'}"
-           class="form-control" id="streetAddress"
-           name="streetAddress"
-           ngModel required>
-    <div *ngIf="streetAddress.errors?.['required']" class="text-danger">
-     
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateRequired(surveyData.streetAddress)}" class="form-group">
+      <label class="required" for="streetAddress">Street Address</label>
+      <input #streetAddress="ngModel" [(ngModel)]="surveyData.streetAddress" [ngModelOptions]="{updateOn: 'blur'}"
+             class="form-control" id="streetAddress" name="streetAddress" ngModel required>
+      <div *ngIf="streetAddress.errors?.['required']" class="text-danger small">
+        Required
+      </div>
     </div>
   </div>
 
-  <div [ngClass]="{'has-error': validateRequired(surveyData.city)}" class="form-group col-12">
-    <label for="city"  class="required">City</label>
-    <input #city="ngModel" [(ngModel)]="surveyData.city" [ngModelOptions]="{updateOn: 'blur'}" class="form-control"
-           id="city" name="city"
-           ngModel required>
-    <div *ngIf="city.errors?.['required']" class="text-danger">
-      
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateRequired(surveyData.city)}" class="form-group">
+      <label class="required" for="city">City</label>
+      <input #city="ngModel" [(ngModel)]="surveyData.city" [ngModelOptions]="{updateOn: 'blur'}"
+             class="form-control" id="city" name="city" ngModel required>
+      <div *ngIf="city.errors?.['required']" class="text-danger small">
+        Required
+      </div>
     </div>
   </div>
 
-  <div [ngClass]="{'has-error': validateRequired(surveyData.state)}" class="form-group col-12">
-    <label for="state"  class="required">State</label>
-    <input #state="ngModel" [(ngModel)]="surveyData.state" [ngModelOptions]="{updateOn: 'blur'}" class="form-control"
-           id="state" name="state"
-           ngModel required>
-    <div *ngIf="state.errors?.['required']" class="text-danger">
-     
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateRequired(surveyData.state)}" class="form-group">
+      <label class="required" for="state">State</label>
+      <input #state="ngModel" [(ngModel)]="surveyData.state" [ngModelOptions]="{updateOn: 'blur'}"
+             class="form-control" id="state" name="state" ngModel required>
+      <div *ngIf="state.errors?.['required']" class="text-danger small">
+        Required
+      </div>
     </div>
   </div>
 
-  <div [ngClass]="{'has-error': validateRequired(surveyData.zip)}" class="form-group col-12">
-    <label for="zip"  class="required">Zip</label>
-    <input #zip="ngModel" [(ngModel)]="surveyData.zip" [ngModelOptions]="{updateOn: 'blur'}" class="form-control"
-           id="zip" name="zip"
-           ngModel required>
-    <div *ngIf="zip.errors?.['required']" class="text-danger">
-      
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateRequired(surveyData.zip)}" class="form-group">
+      <label class="required" for="zip">Zip</label>
+      <input #zip="ngModel" [(ngModel)]="surveyData.zip" [ngModelOptions]="{updateOn: 'blur'}"
+             class="form-control" id="zip" name="zip" ngModel required>
+      <div *ngIf="zip.errors?.['required']" class="text-danger small">
+        Required
+      </div>
     </div>
   </div>
 
-  <div [ngClass]="{'has-error': validateRequired(surveyData.telephoneNumber)}" class="form-group col-12">
-    <label for="telephoneNumber"  class="required">Telephone Number</label>
-    <input #telephoneNumber="ngModel" [(ngModel)]="surveyData.telephoneNumber" [ngModelOptions]="{updateOn: 'blur'}"
-           class="form-control"
-           id="telephoneNumber" name="telephoneNumber"
-           ngModel required>
-    <div *ngIf="telephoneNumber.errors?.['required']" class="text-danger">
-     
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateRequired(surveyData.telephoneNumber)}" class="form-group">
+      <label class="required" for="telephoneNumber">Telephone Number</label>
+      <input #telephoneNumber="ngModel" [(ngModel)]="surveyData.telephoneNumber" [ngModelOptions]="{updateOn: 'blur'}"
+             class="form-control" id="telephoneNumber" name="telephoneNumber" ngModel required>
+      <div *ngIf="telephoneNumber.errors?.['required']" class="text-danger small">
+        Required
+      </div>
     </div>
   </div>
 
-  <div [ngClass]="{'has-error': validateRequired(surveyData.email)}" class="form-group col-12">
-    <label for="email"  class="required">Email</label>
-    <input #email="ngModel" [(ngModel)]="surveyData.email" [ngModelOptions]="{updateOn: 'blur'}" class="form-control"
-           email id="email"
-           name="email" ngModel required>
-    <div *ngIf="email.errors?.['required']" class="text-danger">
-      
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateRequired(surveyData.email)}" class="form-group">
+      <label class="required" for="email">Email</label>
+      <input #email="ngModel" [(ngModel)]="surveyData.email" [ngModelOptions]="{updateOn: 'blur'}"
+             class="form-control" email id="email" name="email" ngModel required>
+      <div *ngIf="email.errors?.['required']" class="text-danger small">
+        Required
+      </div>
+      <div *ngIf="email.errors?.['email']" class="text-danger small">
+        Invalid email
+      </div>
     </div>
   </div>
 
-  <div [ngClass]="{'has-error': validateRequired(surveyData.dateOfSurvey)}" class="form-group col-12">
-    <label for="dateOfSurvey"  class="required">Date of Survey</label>
-    <input #dateOfSurvey="ngModel" [(ngModel)]="surveyData.dateOfSurvey" [ngModelOptions]="{updateOn: 'blur'}"
-           class="form-control" id="dateOfSurvey"
-           name="dateOfSurvey"
-           ngModel
-           required type="date">
-    <div *ngIf="dateOfSurvey.errors?.['required']" class="text-danger">
-     
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateRequired(surveyData.dateOfSurvey)}" class="form-group">
+      <label class="required" for="dateOfSurvey">Date of Survey</label>
+      {{surveyData.dateOfSurvey}}
+      <input #dateOfSurvey="ngModel" [(ngModel)]="surveyData.dateOfSurvey" [ngModelOptions]="{updateOn: 'blur'}"
+             class="form-control"
+             id="dateOfSurvey" name="dateOfSurvey" ngModel placeholder="MM/dd/yyyy" required type="text">
+      <div *ngIf="dateOfSurvey.errors?.['required']" class="text-danger small">
+        Required
+      </div>
     </div>
   </div>
 
-  <div [ngClass]="{'has-error': validateLikedMostOptions()}" class="form-group">
-    <label>Liked Most Options</label>
-    <div *ngFor="let option of likedMostOptionsValues" class="form-check">
-      <input (ngModelChange)="onLikedMostOptionChange($event, option)"
-             [ngModel]="surveyData.likedMostOptions.includes(option)" [value]="option" class="form-check-input"
-             id="{{ option }}"
-             name="likedMostOptions" type="checkbox">
-      <label class="form-check-label" for="{{ option }}">{{ option }}</label>
-    </div>
-    <div *ngIf="validateLikedMostOptions()?.required" class="text-danger">
-      {{ validateLikedMostOptions()?.required }}
-    </div>
-  </div>
-
-  <div [ngClass]="{'has-error': validateRequired(surveyData.interestedIn)}" class="form-group col-12">
-    <label>Interested In</label>
-    <div class="form-check">
-      <input type="radio" id="friends" [(ngModel)]="surveyData.interestedIn" [ngModelOptions]="{updateOn: 'blur'}"
-             class="form-check-input" name="interestedIn" value="FRIENDS" required>
-      <label for="friends" class="form-check-label">Friends</label>
-    </div>
-    <div class="form-check">
-      <input type="radio" id="television" [(ngModel)]="surveyData.interestedIn" [ngModelOptions]="{updateOn: 'blur'}"
-             class="form-check-input" name="interestedIn" value="TELEVISION" required>
-      <label for="television" class="form-check-label">Television</label>
-    </div>
-    <div class="form-check">
-      <input type="radio" id="internet" [(ngModel)]="surveyData.interestedIn" [ngModelOptions]="{updateOn: 'blur'}"
-             class="form-check-input" name="interestedIn" value="INTERNET" required>
-      <label for="internet" class="form-check-label">Internet</label>
-    </div>
-    <div class="form-check">
-      <input type="radio" id="other" [(ngModel)]="surveyData.interestedIn" [ngModelOptions]="{updateOn: 'blur'}"
-             class="form-check-input" name="interestedIn" value="OTHER" required>
-      <label for="other" class="form-check-label">Other</label>
-    </div>
-    
-  </div>
-  
-
-  <div [ngClass]="{'has-error': validateRequired(surveyData.likelihoodToRecommend)}" class="form-group col-12">
-    <label for="likelihoodToRecommend" >Likelihood to Recommend</label>
-    <select #likelihoodToRecommend="ngModel" [(ngModel)]="surveyData.likelihoodToRecommend"
-            [ngModelOptions]="{updateOn: 'blur'}"
-            class="form-control" id="likelihoodToRecommend" name="likelihoodToRecommend"
-            ngModel required>
-      <option value="VERY_LIKELY">Very Likely</option>
-      <option value="LIKELY">Likely</option>
-      <option value="UNLIKELY">Unlikely</option>
-    </select>
-    <div *ngIf="likelihoodToRecommend.errors?.['required']" class="text-danger">
-     
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateLikedMostOptions()}" class="form-group">
+      <label class="required">Liked Most Options</label>
+      <div *ngFor="let option of likedMostOptionsValues" class="form-check">
+        <input (change)="onLikedMostOptionChange($event, option)"
+               [checked]="surveyData.likedMostOptions.includes(option)"
+               [value]="option" class="form-check-input"
+               id="{{ option }}" name="likedMostOptions" type="checkbox">
+        <label class="form-check-label" for="{{ option }}">{{ option }}</label>
+      </div>
+      <div *ngIf="validateLikedMostOptions()?.['required']" class="text-danger small">
+        Required
+      </div>
     </div>
   </div>
 
-  <div class="form-group col-12">
-    <label for="additionalComments"  >Additional Comments</label>
-    <textarea [(ngModel)]="surveyData.additionalComments" class="form-control" id="additionalComments"
-              name="additionalComments"></textarea>
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateRequired(surveyData.interestedIn)}" class="form-group">
+      <label class="required" for="interestedIn">Interested In</label>
+      <select #interestedIn="ngModel" [(ngModel)]="surveyData.interestedIn" [ngModelOptions]="{updateOn: 'blur'}"
+              class="form-control" id="interestedIn" name="interestedIn" ngModel required>
+        <option value="FRIENDS">Friends</option>
+        <option value="TELEVISION">Television</option>
+        <option value="INTERNET">Internet</option>
+        <option value="OTHER">Other</option>
+      </select>
+      <div *ngIf="interestedIn.errors?.['required']" class="text-danger small">
+        Required
+      </div>
+    </div>
   </div>
 
-  <button [disabled]="surveyForm.invalid" class="btn btn-primary" type="submit">Submit</button>
+  <div class="col-md-4">
+    <div [ngClass]="{'has-error': validateRequired(surveyData.likelihoodToRecommend)}" class="form-group">
+      <label class="required" for="likelihoodToRecommend">Likelihood to Recommend</label>
+      <select #likelihoodToRecommend="ngModel" [(ngModel)]="surveyData.likelihoodToRecommend"
+              [ngModelOptions]="{updateOn: 'blur'}"
+              class="form-control" id="likelihoodToRecommend" name="likelihoodToRecommend" ngModel required>
+        <option value="VERY_LIKELY">Very Likely</option>
+        <option value="LIKELY">Likely</option>
+        <option value="UNLIKELY">Unlikely</option>
+      </select>
+      <div *ngIf="likelihoodToRecommend.errors?.['required']" class="text-danger small">
+        Required
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="form-group">
+      <label for="additionalComments">Additional Comments</label>
+      <textarea [(ngModel)]="surveyData.additionalComments" class="form-control" id="additionalComments"
+                name="additionalComments"></textarea>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button (click)="cancelEdit()" class="btn btn-secondary" type="submit">
+      Cancel
+    </button>
+    <button [disabled]="surveyForm.invalid" class="btn btn-primary" type="submit">
+      {{ isUpdate ? 'Update' : 'Create' }}
+    </button>
+  </div>
 </form>
-<div>
-  <footer class="w3-container w3-padding-64  w3-opacity" id="foot">
-    <div class="w3-xlarge w3-padding-32 ">
-      <ul class="list-inline">
-        <li class="list-inline-item">
-          <a routerLink="/homepage" routerlinkActive="active">Homepage</a>
-        </li>
-        <br>
-        <li class="list-inline-item">
-          <a routerLink="/survey-list" routerlinkActive="active">List All Surveys</a>
-        </li>
-      </ul>
-    </div>
-  </footer>
-</div>

@@ -39,8 +39,7 @@ public class Survey {
     private String email;
 
     @Column(name = "date_of_survey", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateOfSurvey;
+    private String dateOfSurvey;
     @ElementCollection
     @CollectionTable(name = "liked_most_options", joinColumns = @JoinColumn(name = "survey_id"))
     @Column(name = "liked_most_options")
@@ -127,11 +126,11 @@ public class Survey {
         this.email = email;
     }
 
-    public Date getDateOfSurvey() {
+    public String getDateOfSurvey() {
         return dateOfSurvey;
     }
 
-    public void setDateOfSurvey(Date dateOfSurvey) {
+    public void setDateOfSurvey(String dateOfSurvey) {
         this.dateOfSurvey = dateOfSurvey;
     }
 

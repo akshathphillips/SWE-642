@@ -9,9 +9,12 @@ import {SurveyFormService} from '../survey-form.service';
 })
 export class SurveyListComponent implements OnInit {
   surveyForms: SurveyForm[] = [];
+  isFormVisible = false;
+  editingSurvey: SurveyForm = new SurveyForm();
 
   constructor(private surveyFormService: SurveyFormService) {
   }
+
   ngOnInit(): void {
     this.getSurveyForms();
   }
@@ -19,8 +22,27 @@ export class SurveyListComponent implements OnInit {
   getSurveyForms() {
     this.surveyFormService.getSurveyList().subscribe(data => {
       this.surveyForms = data;
-      });
-    }
+    });
   }
+
+  updateSurvey(surveyId: string) {
+    this.surveyFormService.getSurvey(surveyId).subscribe((data) => {
+      this.editingSurvey = data;
+      this.isFormVisible = true;
+    });
+  }
+
+  hideForm() {
+    this.isFormVisible = false;
+    this.editingSurvey = new SurveyForm();
+    this.getSurveyForms();
+  }
+
+  deleteSurvey(surveyId: string) {
+    this.surveyFormService.deleteSurvey(surveyId).subscribe(() => {
+      this.getSurveyForms();
+    });
+  }
+}
 
 
