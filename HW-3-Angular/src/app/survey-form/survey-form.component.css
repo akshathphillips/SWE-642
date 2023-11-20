@@ -4,10 +4,7 @@ body {
   }
 
   /* Navbar Styles */
-  .navbar {
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
+
 
   .header {
     border: 5px solid #006633;
@@ -111,3 +108,28 @@ body {
     content: " *";
     color: red;
 }
+/* Navbar background color and text color */
+/* Navbar background color */
+/* Navbar background color and text color */
+.navbar {
+  background-color:#006633; /* Change this to your desired background color */
+}
+
+.navbar-nav .nav-link {
+  color: white; /* Change this to your desired text color */
+}
+
+/* Active link style */
+.navbar-nav .nav-link.active {
+  color:yellow; /* Change this to your active link color */
+  font-weight: bold; /* Change to your desired style */
+}
+
+
+
+/* Optional: Add padding or other styles to the navbar links */
+.navbar-nav .nav-link {
+  padding: 8px 15px; /* Adjust as needed */
+}
+
+
